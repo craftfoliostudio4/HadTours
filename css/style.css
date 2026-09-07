@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    HadTours Travels — Core Design System & Stylesheet
    ========================================================================== */
 
@@ -1464,3 +1464,40 @@ html[dir="rtl"] .floating-whatsapp-btn {
   transform: translateY(-2px);
 }
 
+
+
+/* --- Floating Back Button --- */
+.floating-back-btn {
+  position: fixed;
+  top: 90px;
+  right: 24px;
+  background: rgba(243, 236, 221, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--color-clay);
+  border: 1px solid rgba(62,42,30,0.15);
+  padding: 8px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 900;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+.floating-back-btn:hover {
+  background: var(--color-paper);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  color: var(--color-brand);
+}
+html[dir="ltr"] .floating-back-btn {
+  right: auto;
+  left: 24px;
+}
+html[dir="rtl"] .floating-back-btn svg {
+  transform: scaleX(-1);
+}
