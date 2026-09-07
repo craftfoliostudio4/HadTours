@@ -541,8 +541,8 @@ html[dir="rtl"] .brand-name {
 }
 
 .hero-badge-logo {
-  width: 70px;
-  height: 70px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   background: var(--color-paper);
   padding: 2px;

@@ -98,7 +98,7 @@ function initMobileMenu() {
 
   if (!menuBtn || !drawer) return;
 
-  menuBtn.addEventListener('click', () => {
+  menuBtn.addEventListener('click', (e) => {
     const isOpen = drawer.classList.toggle('active');
     menuBtn.classList.toggle('open', isOpen);
     menuBtn.setAttribute('aria-expanded', isOpen);
@@ -109,7 +109,19 @@ function initMobileMenu() {
     link.addEventListener('click', () => {
       drawer.classList.remove('active');
       menuBtn.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
     });
+  });
+
+  // Close drawer when clicking outside
+  document.addEventListener('click', (e) => {
+    if (drawer.classList.contains('active')) {
+      if (!drawer.contains(e.target) && !menuBtn.contains(e.target)) {
+        drawer.classList.remove('active');
+        menuBtn.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    }
   });
 }
 
